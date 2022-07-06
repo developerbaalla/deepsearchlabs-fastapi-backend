@@ -22,6 +22,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def home():
+    return "Api is working fine"
 
 #count_sentence endpoint
 #return the count sentences
