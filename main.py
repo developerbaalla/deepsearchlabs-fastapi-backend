@@ -12,19 +12,19 @@ models.Base.metadata.create_all(bind=engine)
 #initailize FastApi instance
 app = FastAPI()
 
-origins = ["*"]
+# origins = ["*"]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# # app.add_middleware(
+# #     CORSMiddleware,
+# #     allow_origins=origins,
+# #     allow_credentials=True,
+# #     allow_methods=["*"],
+# #     allow_headers=["*"],
+# # )
 
 @app.get("/")
 def home():
-    return "Api is working fine"
+    return {'message': 'this is the root message'}
 
 #count_sentence endpoint
 #return the count sentences
